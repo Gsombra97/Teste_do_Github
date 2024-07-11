@@ -1,8 +1,17 @@
 
+
 document.addEventListener('DOMContentLoaded', function() {
  
 
-    //BOTÃO TO-TOP
+    //IMPLEMENTANDO O HEADER EM TUDO
+  
+    fetch('../HTML/header.html')
+  
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+  
+        //BOTÃO TO-TOP
   
         const scrollToTop = document.getElementById('buttom-top');
         
@@ -13,5 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         });
   
+      })
+      .catch(error => console.error('Erro ao carregar o cabeçalho:', error));
+  
   
   }); //FECHAMENTO do DOMContentLoaded
+  
